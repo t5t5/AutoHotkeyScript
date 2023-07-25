@@ -45,3 +45,12 @@ CapsLock:: {
 	SendMessage(0x50,, 0x4090409,, "A") ; английский
 	SetCapsLockState("Off")
 }
+
+; [Ctrl + Shift + End] : Переназначить на кнопку [Play/Pause] (Работает для Яндекс.Музыка в браузере)
+^+sc14F::Send("{Media_Play_Pause}")
+
+; [Ctrl + Shift + PgDown] : Переназначить на кнопку [Next Track] (Работает для Яндекс.Музыка в браузере)
+^+sc151::Send("{Media_Next}")
+
+; [Ctrl + Shift + PgUp] : Переназначить на кнопку [Previous Track] (Работает для Яндекс.Музыка в браузере)
+^+sc149::Send("{Media_Prev}")
