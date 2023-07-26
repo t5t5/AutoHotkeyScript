@@ -54,3 +54,23 @@ CapsLock:: {
 
 ; [Ctrl + Shift + PgUp] : Переназначить на кнопку [Previous Track] (Работает для Яндекс.Музыка в браузере)
 ^+sc149::Send("{Media_Prev}")
+
+
+; [Win + x] : Развернуть окно на весь экран. Для RDCMan окно не должно быть в режиме Maximize, иначе наблюдаются артефакты.
+;sc02d => x
+#sc02d:: {
+    winState := WinGetMinMax("A")
+    if (winState == 0) or (winState == -1) {
+        if WinActive("Remote Desktop Connection Manager") {
+            WinMove(-8,40,2576,1408,"A")           ; Для монитора 2560х1440 и панелью задач сверху
+;           WinGetPos(&x,&y,&w,&h, "A")            ; А так можно получить параметры для монитора
+;           MsgBox("Window is at " X "," Y " and its size is " W "x" H)
+;           -8,32,2576,1416
+        } else {
+            WinMaximize("A")
+        }
+    } else if (winState == 1) {
+        WinRestore("A")
+    }
+}
+
