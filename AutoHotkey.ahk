@@ -2,7 +2,7 @@
 
 ; [Win + C] : Запуск калькулятора
 ;sc02e => c
-#sc02e::run "C:\Progs\Calc\Calculator.exe"
+#sc02e::run "C:\Progs\SpeedCrunch\speedcrunch.exe"
 
 ; [Win + F] : Запуск Far в ConEmu, в ConEmu должно быть настроено сочетание клавиш [Win + Shift + F] для запуска Far
 ;sc021 => f
