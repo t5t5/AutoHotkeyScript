@@ -79,3 +79,7 @@ CapsLock:: {
     }
 }
 
+; [Ctrl + w], и если активаное окно PotPlayer : ничего не делать, ибо забодало постоянное открытие видеокамеры, которой нет.
+HotIfWinActive ("ahk_class PotPlayer64")
+Hotkey "^w",
+HotIfWinActive
