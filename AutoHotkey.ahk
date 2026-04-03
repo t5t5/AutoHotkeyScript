@@ -33,13 +33,10 @@ $Esc:: {
 ; [Win + Ctrl + d] : Отправить текстовую строку с текущей датой
 ;sc020 => d
 #^sc020:: {
-    Sleep(150)
+    KeyWait("LWin")
+    KeyWait("LCtrl")
     TimeString := FormatTime(,"yyyy-MM-dd")
-    Send(TimeString)
-    Send("{LCtrl Up}")
-    Send("{RCtrl Up}")
-    Send("{LWin Up}")
-    Send("{RWin Up}")
+    SendText(TimeString)
 }
 
 ; [CapsLock] : Если активное окно "понимает" vim, переключает язык на английский, выключает CapsLock на всякий случай и отправляет [Esc]
