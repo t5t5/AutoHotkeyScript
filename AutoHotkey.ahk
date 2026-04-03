@@ -83,3 +83,10 @@ CapsLock:: {
 HotIfWinActive ("ahk_class PotPlayer64")
 Hotkey "^w",
 HotIfWinActive
+
+; [Enter] в окнах DeepSeek и Qwen переопределяем на [Shift + Enter]
+; [Ctrl + Enter] переопределяем на [Enter]
+#HotIf WinActive("DeepSeek") or WinActive("Qwen")
+Enter::+Enter
+^Enter::Enter
+#HotIf
