@@ -2,7 +2,18 @@
 
 ; [Win + C] : Запуск калькулятора
 ;sc02e => c
-#sc02e::run "C:\Progs\SpeedCrunch\speedcrunch.exe"
+#sc02e:: {
+    if WinExist("ahk_exe speedcrunch.exe") {
+        WinActivate
+        WinWaitActive("ahk_exe speedcrunch.exe")
+    } else {
+        Run("C:\Progs\SpeedCrunch\speedcrunch.exe")
+        WinWait("ahk_exe speedcrunch.exe")
+        WinActivate
+        WinWaitActive("ahk_exe speedcrunch.exe")
+    }
+}
+;run "C:\Progs\SpeedCrunch\speedcrunch.exe"
 
 ; [Win + F] : Запуск Far в ConEmu, в ConEmu должно быть настроено сочетание клавиш [Win + Shift + F] для запуска Far
 ;sc021 => f
